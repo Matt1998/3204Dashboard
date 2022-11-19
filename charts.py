@@ -17,6 +17,7 @@ from IPython.display import Image
 import pydotplus
 import plotly
 import plotly.express as pex
+import app
 
 
 precision_bar = None
