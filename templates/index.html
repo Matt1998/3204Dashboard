@@ -1,15 +1,14 @@
 {% extends 'base.html' %}
-{% block head %}
-    {{ super() }}
-    <h1>{% block title %}Dashboard{% endblock %}</h1>
-{% endblock %}
+{% block title %}Dashboard{% endblock %}
 {% block content %}
 <body class="sb-nav-fixed">
 {% block nav %}
+    {{ super() }}
 {% endblock %}
 <div id="layoutSidenav">
     <div id="layoutSidenav_nav">
         {% block sidenav %}
+            {{ super() }}
         {% endblock %}
     </div>
     <div id="layoutSidenav_content">
