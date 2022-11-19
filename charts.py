@@ -1,3 +1,4 @@
+from flask import Flask
 from sklearn.model_selection import cross_val_score
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
@@ -17,7 +18,6 @@ from IPython.display import Image
 import pydotplus
 import plotly
 import plotly.express as pex
-import app
 
 
 precision_bar = None
