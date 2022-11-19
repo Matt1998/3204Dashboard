@@ -109,7 +109,7 @@ def process_data():
               zip(group_names, group_percentages)]
     labels = np.asarray(labels).reshape(2, 2)
     sns.heatmap(cmknn, annot=labels, fmt='', cmap='Blues')
-    plt.savefig('static/assets/img/Knn_heatmap.png')
+    plt.savefig('static/assets/img/Knn_heatmap.png', dpi=300, bbox_inches = "tight")
 
     score_list_rf = []
     X_Train, X_Test, Y_Train, Y_Test = train_test_split(X, Y, test_size=0.3, random_state=44)
@@ -134,7 +134,7 @@ def process_data():
               zip(group_names, group_percentages)]
     labels = np.asarray(labels).reshape(2, 2)
     sns.heatmap(cmrf, annot=labels, fmt='', cmap='Blues')
-    plt.savefig('static/assets/img/RandomForest_heatmap.png')
+    plt.savefig('static/assets/img/RandomForest_heatmap.png', dpi=300, bbox_inches = "tight")
 
     score_list_dt = []
     X_Train, X_Test, Y_Train, Y_Test = train_test_split(X, Y, test_size=0.3,
@@ -160,7 +160,7 @@ def process_data():
               zip(group_names, group_percentages)]
     labels = np.asarray(labels).reshape(2, 2)
     sns.heatmap(cmdt, annot=labels, fmt='', cmap='Blues')
-    plt.savefig('static/assets/img/DecisionTree_heatmap.png')
+    plt.savefig('static/assets/img/DecisionTree_heatmap.png', dpi=300, bbox_inches = "tight")
 
     dot_data = StringIO()
     export_graphviz(clf, out_file=dot_data,
@@ -174,10 +174,10 @@ def process_data():
             width=0.4)
     plt.xlabel('\nPrecision')
     plt.yscale("log")
-    plt.savefig('static/assets/img/precision_bar.png')
+    plt.savefig('static/assets/img/precision_bar.png', dpi=300, bbox_inches = "tight")
     print("\n")
     plt.bar(["KNN", "Decision Tree", "Random Forest"], [score_list_knn[0], score_list_dt[0], score_list_rf[0]],
             width=0.4)
     plt.xlabel('\nAccuracy')
     plt.yscale("log")
-    plt.savefig('static/assets/img/accuracy_bar.png')
+    plt.savefig('static/assets/img/accuracy_bar.png', dpi=300, bbox_inches = "tight")

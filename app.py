@@ -4,6 +4,11 @@ from charts import process_data
 app = Flask(__name__)
 
 
+@app.before_first_request
+def before_first_request():
+    process_data()
+
+
 @app.route('/')
 @app.route('/index')
 def index():  # put application's code here
@@ -21,5 +26,4 @@ def group():
 
 
 if __name__ == '__main__':
-    process_data()
     app.run()
