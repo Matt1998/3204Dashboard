@@ -196,13 +196,11 @@ if __name__ == '__main__':
     graph.write_png('decision.png')
     Image(graph.create_png())
 
-    mpl_fig = plt.figure()
     plt.bar(["KNN", "Decision Tree", "Random Forest"], [score_list_knn[1], score_list_dt[1], score_list_rf[1]],
             width=0.4)
     plt.xlabel('\nPrecision')
     plt.yscale("log")
-    plt.show()
-    precision_bar = mpl_fig
+    plt.savefig('/static/assets/img/precision_bar.png')
     print("\n")
     plt.bar(["KNN", "Decision Tree", "Random Forest"], [score_list_knn[0], score_list_dt[0], score_list_rf[0]],
             width=0.4)
