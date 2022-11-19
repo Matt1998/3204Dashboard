@@ -23,4 +23,3 @@ def group():
 
 if __name__ == '__main__':
     app.run()
-    charts.process_data()
