@@ -162,8 +162,7 @@ def process_data():
               zip(group_names, group_percentages)]
     labels = np.asarray(labels).reshape(2, 2)
     svm = sns.heatmap(cmdt, annot=labels, fmt='', cmap='Blues')
-    fig = svm.get_figure()
-    fig.savefig('static/assets/img/DecisionTree_heatmap.png')
+    #plt.savefig('static/assets/img/DecisionTree_heatmap.png')
 
     dot_data = StringIO()
     export_graphviz(clf, out_file=dot_data,
