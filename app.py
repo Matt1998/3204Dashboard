@@ -22,5 +22,5 @@ def group():
 
 
 if __name__ == '__main__':
-    charts.process_data()
     app.run()
+    charts.process_data()
