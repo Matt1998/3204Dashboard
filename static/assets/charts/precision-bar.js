@@ -18,9 +18,7 @@ var myLineChart = new Chart(ctx, {
   options: {
     scales: {
       xAxes: [{
-        time: {
-          unit: 'method'
-        },
+        type: 'logarithmic',
         gridLines: {
           display: false
         },
