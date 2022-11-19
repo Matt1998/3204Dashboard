@@ -182,4 +182,4 @@ def process_data():
             width=0.4)
     plt.xlabel('\nAccuracy')
     plt.yscale("log")
-    plt.show()
+    plt.savefig('static/assets/img/accuracy_bar.png')
