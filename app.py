@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-import charts
+from charts import process_data
 
 app = Flask(__name__)
 
@@ -12,7 +12,7 @@ def index():  # put application's code here
 
 @app.route('/charts')
 def charts():
-    charts.process_data()
+    process_data()
     return render_template('/charts.html')
 
 
