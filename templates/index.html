@@ -2,7 +2,7 @@
 <html lang="en">
 {% extends 'base.html' %}
 <head>
-    {% block header %}
+    {% block head %}
         <h1>{% block title %}Welcome Home!{% endblock %}</h1>
     {% endblock %}
 </head>
@@ -152,6 +152,8 @@
         </footer>
     </div>
 </div>
+{% block footer %}
+{% endblock %}
 </body>
 {% endblock %}
 </html>
