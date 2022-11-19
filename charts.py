@@ -176,7 +176,7 @@ def process_data():
             width=0.4)
     plt.xlabel('\nPrecision')
     plt.yscale("log")
-    plt.savefig('/static/assets/img/precision_bar.png')
+    plt.savefig('static/assets/img/precision_bar.png')
     print("\n")
     plt.bar(["KNN", "Decision Tree", "Random Forest"], [score_list_knn[0], score_list_dt[0], score_list_rf[0]],
             width=0.4)
