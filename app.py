@@ -13,5 +13,10 @@ def charts():
     return render_template('/charts.html')
 
 
+@app.route('/group')
+def group():
+    return render_template('/group.html')
+
+
 if __name__ == '__main__':
     app.run()
