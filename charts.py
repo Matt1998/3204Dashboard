@@ -18,7 +18,7 @@ import pydotplus
 
 
 def process_data():
-    df = pandas.read_excel("Packetbeat_Cleaned.xlsx")
+    df = pandas.read_excel("/static/assets/charts/Packetbeat_Cleaned.xlsx")
 
     # Convert IP address to long
     df['destination.ip'] = df['destination.ip'].apply(lambda x: int(ipaddress.IPv4Address(x)))
@@ -39,10 +39,10 @@ def process_data():
         else:
             df.loc[i, "source.bytes (kb)"] = float(df.loc[i, "source.bytes (kb)"].replace("B", ""))
 
-    df.to_excel("Packetbeat_Final.xlsx", index=False)
+    df.to_excel("/static/assets/charts/Packetbeat_Final.xlsx", index=False)
 
     # Make sure the excel sheet is uploaded to this colab (change later for gdrive)
-    X = pandas.read_excel("Packetbeat_Final.xlsx")
+    X = pandas.read_excel("/static/assets/charts/Packetbeat_Final.xlsx")
     # Store attack column into Y
     Y = X["attack"]
     # Remove attack column from data
