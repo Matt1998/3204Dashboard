@@ -136,7 +136,7 @@ def process_data():
               zip(group_names, group_percentages)]
     labels = np.asarray(labels).reshape(2, 2)
     sns.heatmap(cmrf, annot=labels, fmt='', cmap='Blues')
-    plt.show()
+    plt.savefig('static/assets/img/RandomForest_heatmap.png')
 
     score_list_dt = []
     X_Train, X_Test, Y_Train, Y_Test = train_test_split(X, Y, test_size=0.3,
@@ -162,7 +162,7 @@ def process_data():
               zip(group_names, group_percentages)]
     labels = np.asarray(labels).reshape(2, 2)
     sns.heatmap(cmdt, annot=labels, fmt='', cmap='Blues')
-    plt.show()
+    plt.savefig('static/assets/img/DecisionTree_heatmap.png')
 
     dot_data = StringIO()
     export_graphviz(clf, out_file=dot_data,
