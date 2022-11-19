@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import charts
 
 app = Flask(__name__)
 
@@ -11,7 +12,8 @@ def index():  # put application's code here
 
 @app.route('/charts')
 def charts():
-    return render_template('/charts.html')
+    graphJSON = json.dumps(charts.precision_bar, cls=plotly.utils.PlotlyJSONEncoder)
+    return render_template('/charts.html', graphJSON=graphJSON)
 
 
 @app.route('/group')
@@ -20,4 +22,5 @@ def group():
 
 
 if __name__ == '__main__':
+    charts.process_data()
     app.run()
