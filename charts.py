@@ -49,6 +49,8 @@ def process_data():
     X.drop("attack", inplace=True, axis=1)
     feature_cols = list(X.columns)
 
+    print("TEST")
+
     # Determine best value for k
     k_range = range(1, 27)
     scores = {}
