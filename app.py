@@ -12,7 +12,6 @@ def index():  # put application's code here
 
 @app.route('/charts')
 def charts():
-    process_data()
     return render_template('/charts.html')
 
 
@@ -22,4 +21,5 @@ def group():
 
 
 if __name__ == '__main__':
+    process_data()
     app.run()
