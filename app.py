@@ -43,7 +43,7 @@ def group():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
     df = pandas.read_excel("Packetbeat_Cleaned.xlsx")
 
     # Convert IP address to long
