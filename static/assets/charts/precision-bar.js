@@ -18,7 +18,6 @@ var myLineChart = new Chart(ctx, {
   options: {
     scales: {
       xAxes: [{
-        type: 'logarithmic',
         gridLines: {
           display: false
         },
@@ -27,6 +26,7 @@ var myLineChart = new Chart(ctx, {
         }
       }],
       yAxes: [{
+        type: 'logarithmic',
         ticks: {
           min: 0,
           max: 15000,
