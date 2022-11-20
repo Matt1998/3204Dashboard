@@ -91,7 +91,7 @@ def process_data():
 
     score_list_knn = []
     accknn = knn.score(X_Test, Y_Test)
-    knn_accuracy = "Accuracy: " + str(accknn)
+    knn_accuracy = str(accknn)
     y_pred = knn.predict(X_Test)
     y_true = Y_Test
     cmknn = confusion_matrix(y_true, y_pred)
@@ -100,7 +100,7 @@ def process_data():
     preknn = tpknn / (tpknn + fpknn)
     score_list_knn.append(accknn)
     score_list_knn.append(preknn)
-    knn_precision = "Precision: " + str(preknn)
+    knn_precision = str(preknn)
     f, ax = plt.subplots(figsize=(5, 5))
     group_names = ['True Neg', 'False Pos', 'False Neg', 'True Pos']
     group_percentages = ["{0:.4%}".format(value) for value in
@@ -121,7 +121,7 @@ def process_data():
     rf.fit(X_Train, Y_Train)
     y_pred = rf.predict(X_Test)
     accrf = metrics.accuracy_score(Y_Test, y_pred)
-    randomforest_accuracy = "Accuracy:" + str(accrf)
+    randomforest_accuracy = str(accrf)
     y_true = Y_Test
     cmrf = confusion_matrix(y_true, y_pred)
     tprf = cmrf[1][1]
@@ -129,7 +129,7 @@ def process_data():
     prerf = tprf / (tprf + fprf)
     score_list_rf.append(accrf)
     score_list_rf.append(prerf)
-    randomforest_precision = "Precision:" + str(prerf)
+    randomforest_precision = str(prerf)
     f, ax = plt.subplots(figsize=(5, 5))
     group_names = ['True Neg', 'False Pos', 'False Neg', 'True Pos']
     group_percentages = ["{0:.4%}".format(value) for value in
@@ -152,14 +152,14 @@ def process_data():
     y_pred = clf.predict(X_Test)
     y_true = Y_Test
     accdt = metrics.accuracy_score(Y_Test, y_pred)
-    decisiontree_accuracy = "Accuracy:" + str(accdt)
+    decisiontree_accuracy = str(accdt)
     cmdt = confusion_matrix(y_true, y_pred)
     tpdt = cmdt[1][1]
     fpdt = cmdt[0][1]
     predt = tpdt / (tpdt + fpdt)
     score_list_dt.append(accdt)
     score_list_dt.append(predt)
-    decisiontree_precision = "Precision:" + str(predt)
+    decisiontree_precision = str(predt)
     f, ax = plt.subplots(figsize=(5, 5))
     group_names = ['True Neg', 'False Pos', 'False Neg', 'True Pos']
     group_percentages = ["{0:.4%}".format(value) for value in
