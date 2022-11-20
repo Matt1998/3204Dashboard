@@ -73,7 +73,7 @@
                         <img src="/static/assets/img/accuracy_bar.png" alt="Accuracy Bar Chart" class="img-fluid" width="100%" />
                     </div>
                     <div class="card-footer small text-muted">
-                        KNN Accuracy: {{ data['knn_accuracy'] }}<br/>Decision Tree Accuracy: {{ data['decisiontree_accuracy'] }}<br/>Random Forest Accuracy: {{ data['randomforest_accuracy'] }}
+                        <strong>KNN Accuracy:</strong><br/>{{ data['knn_accuracy'] }}<br/><strong>Decision Tree Accuracy:</strong><br/>{{ data['decisiontree_accuracy'] }}<br/><strong>Random Forest Accuracy:</strong><br/>{{ data['randomforest_accuracy'] }}
                     </div>
                 </div>
             </div>
@@ -84,9 +84,9 @@
                         Precision Chart
                     </div>
                     <div class="card-body">
-                        <img src="/static/assets/img/DecisionTree_heatmap.png" alt="Decision Tree Heatmap" class="img-fluid" width="100%" />
+                        <img src="/static/assets/img/precision_bar.png" alt="Precision Bar Chart" class="img-fluid" width="100%" />
                     </div>
-                    <div class="card-footer small text-muted">{{ data['decisiontree_accuracy'] }}<br />{{ data['decisiontree_precision'] }}</div>
+                    <div class="card-footer small text-muted"><strong>KNN Precision:</strong><br/>{{ data['knn_precision'] }}<br/><strong>Decision Tree Precision:</strong><br/>{{ data['decisiontree_precision'] }}<br/><strong>Random Forest Precision:</strong><br/>{{ data['randomforest_precision'] }}</div>
                 </div>
             </div>
         </div>
