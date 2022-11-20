@@ -1,6 +1,5 @@
 from flask import Flask, render_template, url_for
 from charts import process_data
-from threading import Thread
 
 app = Flask(__name__)
 
