@@ -23,6 +23,12 @@ def charts():
     return render_template('/charts.html', data=data)
 
 
+@app.route('/decisiontree')
+def decision():
+    global data
+    return render_template('/decisiontree.html', data=data)
+
+
 @app.route('/group')
 def group():
     return render_template('/group.html')

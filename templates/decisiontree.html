@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}Charts{% endblock %}
+{% block content %}
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Charts</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="{{ url_for('index') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active"><a href="{{ url_for('charts') }}">Charts</a></li>
+            <li class="breadcrumb-item active">Decision Tree</li>
+        </ol>
+        <div class="card mb-4">
+            <div class="card-body">
+                In this page, you will see more details and information on the Decision Tree.
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-poll me-1"></i>
+                Determine K value
+            </div>
+            <div class="card-body">
+                <p>{{ data['k_value'] }}</p>
+            </div>
+            <div class="card-footer small text-muted"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-braille me-1"></i>
+                        Decision Tree
+                    </div>
+                    <div class="card-body">
+                        <img src="/static/assets/img/decision.png" alt="Decision Tree" class="img-fluid" width="100%" />
+                    </div>
+                    <div class="card-footer small text-muted"></div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-braille me-1"></i>
+                        Decision Tree Chart
+                    </div>
+                    <div class="card-body">
+                        <img src="/static/assets/img/DecisionTree_heatmap.png" alt="Decision Tree Heatmap" class="img-fluid" width="100%" />
+                    </div>
+                    <div class="card-footer small text-muted"><strong>Decision Tree Accuracy:</strong><br/>{{ data['decisiontree_accuracy'] }}<br /><strong>Decision Tree Precision:</strong><br/>{{ data['decisiontree_precision'] }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="/static/assets/charts/precision-bar.js"></script>
+    <script src="assets/demo/chart-pie-demo.js"></script>
+{% endblock %}
