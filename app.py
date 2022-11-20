@@ -7,6 +7,7 @@ k_value = ""
 
 @app.before_first_request
 def before_first_request():
+    global k_value
     k_value = process_data()
 
 
@@ -18,6 +19,7 @@ def index():
 
 @app.route('/charts')
 def charts():
+    global k_value
     return render_template('/charts.html', k_value=k_value)
 
 
