@@ -21,6 +21,7 @@ k_value = None
 
 
 def process_data():
+    global k_value
     df = pandas.read_excel("static/assets/charts/Packetbeat_Cleaned.xlsx")
 
     # Convert IP address to long
