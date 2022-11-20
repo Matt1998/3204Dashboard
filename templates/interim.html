@@ -1,13 +1,23 @@
-<html>
-  <head>
+{% extends 'base.html' %}
+{% block title %}Reloading{% endblock %}
+{% block reload %}
     <script>
-      function navigate() {
-        window.location.href = 'index';  // redirect when done!
-      }
-      fetch('process').then(navigate); // load the slow url then navigate
+        function navigate() {
+            window.location.href = 'index';  // redirect when done!
+        }
+
+        fetch('process').then(navigate); // load the slow url then navigate
     </script>
-  </head>
-  <body>
-    Processing...  
-  </body>
-</html>
+{% endblock %}
+{% block nav %}
+    {{ super() }}
+{% endblock %}
+{% block sidenav %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid px-4">
+        <h1 class="mt-4"><i class="fa-solid fa-sync fa-spin"></i> Reloading</h1>
+        <p>This may take awhile. Do not refresh this page or click any link/buttons.</p>
+    </div>
+{% endblock %}
