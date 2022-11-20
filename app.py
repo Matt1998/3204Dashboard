@@ -1,5 +1,6 @@
 from flask import Flask, render_template, url_for
 from charts import process_data
+import charts
 
 app = Flask(__name__)
 
@@ -11,13 +12,13 @@ def before_first_request():
 
 @app.route('/')
 @app.route('/index')
-def index():  # put application's code here
+def index():
     return render_template('/index.html')
 
 
 @app.route('/charts')
 def charts():
-    return render_template('/charts.html')
+    return render_template('/charts.html', k_value=charts.k_value)
 
 
 @app.route('/group')

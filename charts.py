@@ -17,6 +17,9 @@ from IPython.display import Image
 import pydotplus
 
 
+k_value = None
+
+
 def process_data():
     df = pandas.read_excel("static/assets/charts/Packetbeat_Cleaned.xlsx")
 
@@ -49,8 +52,6 @@ def process_data():
     X.drop("attack", inplace=True, axis=1)
     feature_cols = list(X.columns)
 
-    print("TEST")
-
     # Determine best value for k
     k_range = range(1, 27)
     scores = {}
@@ -79,8 +80,8 @@ def process_data():
     k = max(scores_mean, key=scores_mean.get)
 
     # Show most accurate k value
-    print("The most accurate k value is \"" + str(k) + "\" and best value of n is \"" + str(
-        bn) + "\" with accuracy of: " + str(max(score_max)))
+    k_value = "The most accurate k value is \"" + str(k) + "\" and best value of n is \"" + str(
+        bn) + "\" with accuracy of: " + str(max(score_max))
 
     # Training the model with best k
     # random_state to ensure same split to replicate test results (optional),
