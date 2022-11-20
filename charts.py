@@ -103,10 +103,12 @@ def process_data():
     knn_precision = str(preknn)
     f, ax = plt.subplots(figsize=(5, 5))
     group_names = ['True Neg', 'False Pos', 'False Neg', 'True Pos']
+    group_counts = ["{0:0.0f}".format(value) for value in
+                cmknn.flatten()]
     group_percentages = ["{0:.4%}".format(value) for value in
                          cmknn.flatten() / np.sum(cmknn)]
-    labels = [f"{v1}\n{v2}" for v1, v2 in
-              zip(group_names, group_percentages)]
+    labels = [f"{v1}\n{v2}\n{v3}" for v1, v2, v3 in
+          zip(group_names,group_counts,group_percentages)]   
     labels = np.asarray(labels).reshape(2, 2)
     sns.heatmap(cmknn, annot=labels, fmt='', cmap='Blues')
     plt.savefig('static/assets/img/Knn_heatmap.png',dpi=300, bbox_inches = "tight")
@@ -132,10 +134,12 @@ def process_data():
     randomforest_precision = str(prerf)
     f, ax = plt.subplots(figsize=(5, 5))
     group_names = ['True Neg', 'False Pos', 'False Neg', 'True Pos']
+    group_counts = ["{0:0.0f}".format(value) for value in
+                cmrf.flatten()]
     group_percentages = ["{0:.4%}".format(value) for value in
-                         cmknn.flatten() / np.sum(cmknn)]
-    labels = [f"{v1}\n{v2}" for v1, v2 in
-              zip(group_names, group_percentages)]
+                         cmrf.flatten() / np.sum(cmrf)]
+    labels = [f"{v1}\n{v2}\n{v3}" for v1, v2, v3 in
+          zip(group_names,group_counts,group_percentages)] 
     labels = np.asarray(labels).reshape(2, 2)
     sns.heatmap(cmrf, annot=labels, fmt='', cmap='Blues')
     plt.savefig('static/assets/img/RandomForest_heatmap.png',dpi=300, bbox_inches = "tight")
@@ -162,10 +166,12 @@ def process_data():
     decisiontree_precision = str(predt)
     f, ax = plt.subplots(figsize=(5, 5))
     group_names = ['True Neg', 'False Pos', 'False Neg', 'True Pos']
+    group_counts = ["{0:0.0f}".format(value) for value in
+                cmdt.flatten()]
     group_percentages = ["{0:.4%}".format(value) for value in
-                         cmknn.flatten() / np.sum(cmknn)]
-    labels = [f"{v1}\n{v2}" for v1, v2 in
-              zip(group_names, group_percentages)]
+                         cmdt.flatten() / np.sum(cmdt)]
+    labels = [f"{v1}\n{v2}\n{v3}" for v1, v2, v3 in
+          zip(group_names,group_counts,group_percentages)] 
     labels = np.asarray(labels).reshape(2, 2)
     svm = sns.heatmap(cmdt, annot=labels, fmt='', cmap='Blues')
     plt.savefig('static/assets/img/DecisionTree_heatmap.png',dpi=300, bbox_inches = "tight")
