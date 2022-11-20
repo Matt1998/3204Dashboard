@@ -179,7 +179,7 @@ def process_data():
                     filled=True, rounded=True,
                     special_characters=True, feature_names=feature_cols, class_names=['0', '1'])
     graph = pydotplus.graph_from_dot_data(dot_data.getvalue())
-    graph.write_png('static/assets/imge/decision.png')
+    graph.write_png('static/assets/img/decision.png')
     Image(graph.create_png())
 
     plt.bar(["KNN", "Decision Tree", "Random Forest"], [score_list_knn[1], score_list_dt[1], score_list_rf[1]],
