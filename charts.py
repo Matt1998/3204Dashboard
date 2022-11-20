@@ -121,7 +121,7 @@ def process_data():
     rf.fit(X_Train, Y_Train)
     y_pred = rf.predict(X_Test)
     accrf = metrics.accuracy_score(Y_Test, y_pred)
-    print("Accuracy:", accrf)
+    randomforest_accuracy = "Accuracy:" + str(accrf)
     y_true = Y_Test
     cmrf = confusion_matrix(y_true, y_pred)
     tprf = cmrf[1][1]
@@ -129,7 +129,7 @@ def process_data():
     prerf = tprf / (tprf + fprf)
     score_list_rf.append(accrf)
     score_list_rf.append(prerf)
-    print("Precision:", prerf)
+    randomforest_precision = "Precision:" + str(prerf)
     f, ax = plt.subplots(figsize=(5, 5))
     group_names = ['True Neg', 'False Pos', 'False Neg', 'True Pos']
     group_percentages = ["{0:.4%}".format(value) for value in
@@ -152,14 +152,14 @@ def process_data():
     y_pred = clf.predict(X_Test)
     y_true = Y_Test
     accdt = metrics.accuracy_score(Y_Test, y_pred)
-    print("Accuracy:", accdt)
+    decisiontree_accuracy = "Accuracy:" + str(accdt)
     cmdt = confusion_matrix(y_true, y_pred)
     tpdt = cmdt[1][1]
     fpdt = cmdt[0][1]
     predt = tpdt / (tpdt + fpdt)
     score_list_dt.append(accdt)
     score_list_dt.append(predt)
-    print("Precision:", predt)
+    decisiontree_precision = "Precision:" + str(predt)
     f, ax = plt.subplots(figsize=(5, 5))
     group_names = ['True Neg', 'False Pos', 'False Neg', 'True Pos']
     group_percentages = ["{0:.4%}".format(value) for value in
@@ -187,11 +187,10 @@ def process_data():
     plt.xlabel('\nPrecision')
     plt.yscale("log")
     plt.savefig('static/assets/img/precision_bar.png',dpi=300, bbox_inches = "tight")
-    print("\n")
     plt.bar(["KNN", "Decision Tree", "Random Forest"], [score_list_knn[0], score_list_dt[0], score_list_rf[0]],
             width=0.4)
     plt.xlabel('\nAccuracy')
     plt.yscale("log")
     plt.savefig('static/assets/img/accuracy_bar.png',dpi=300, bbox_inches = "tight")
 
-    return {'k_value': k_value, 'knn_accuracy': knn_accuracy, 'knn_precision': knn_precision}
+    return {'k_value': k_value, 'knn_accuracy': knn_accuracy, 'knn_precision': knn_precision, 'decisiontree_accuracy': decisiontree_accuracy, 'decisiontree_precision': decisiontree_precision, 'randomforest_accuracy': randomforest_accuracy, 'randomforest_precision': randomforest_precision}

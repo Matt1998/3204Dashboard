@@ -31,7 +31,7 @@
                         KNN Chart
                     </div>
                     <div class="card-body">
-                        <img src="/static/assets/img/Knn_heatmap.png" alt="KNN Heatmap" class="img-fluid" width="100%"/>
+                        <img src="/static/assets/img/Knn_heatmap.png" alt="KNN Heatmap" class="img-fluid" width="100%" />
                     </div>
                     <div class="card-footer small text-muted">{{ data['knn_accuracy'] }}<br/>{{ data['knn_precision'] }}
                     </div>
@@ -41,12 +41,24 @@
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-chart-pie me-1"></i>
-                        Pie Chart Example
+                        Decision Tree Chart
                     </div>
                     <div class="card-body">
-                        <canvas id="myPieChart" width="100%" height="50"></canvas>
+                        <img src="/static/assets/img/DecisionTree_heatmap.png" alt="Decision Tree Heatmap" class="img-fluid" width="100%" />
                     </div>
-                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+                    <div class="card-footer small text-muted">{{ data['decisiontree_accuracy'] }}<br />{{ data['decisiontree_precision'] }}</div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-chart-pie me-1"></i>
+                        Random Tree Chart
+                    </div>
+                    <div class="card-body">
+                        <img src="/static/assets/img/RandomTree_heatmap.png" alt="Random Tree Heatmap" class="img-fluid" width="100%" />
+                    </div>
+                    <div class="card-footer small text-muted">{{ data['randomtree_accuracy'] }}<br />{{ data['randomtree_precision'] }}</div>
                 </div>
             </div>
             <div class="card mb-4">
