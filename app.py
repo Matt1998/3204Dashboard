@@ -13,7 +13,6 @@ def process():
 
 
 @app.route('/')
-@app.route('/reload')
 def redir():
     return render_template('/interim.html')
 
