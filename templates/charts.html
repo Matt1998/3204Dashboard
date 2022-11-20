@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% block title %}Charts{% endblock %}
 {% block content %}
+    <div class="card mb-4">
+        <div class="card-body">
+            If the page is not showing correctly, please click the <i class="fas fa-redo-alt"></i> Reload button above.
+        </div>
+    </div>
     <div class="container-fluid px-4">
         <h1 class="mt-4">Charts</h1>
         <ol class="breadcrumb mb-4">
@@ -31,9 +36,11 @@
                         KNN Chart
                     </div>
                     <div class="card-body">
-                        <img src="/static/assets/img/Knn_heatmap.png" alt="KNN Heatmap" class="img-fluid" width="100%" />
+                        <img src="/static/assets/img/Knn_heatmap.png" alt="KNN Heatmap" class="img-fluid" width="100%"/>
                     </div>
-                    <div class="card-footer small text-muted"><strong>KNN Accuracy:</strong><br/>{{ data['knn_accuracy'] }}<br/><strong>KNN Precision:</strong><br/>{{ data['knn_precision'] }}
+                    <div class="card-footer small text-muted"><strong>KNN
+                        Accuracy:</strong><br/>{{ data['knn_accuracy'] }}<br/><strong>KNN
+                        Precision:</strong><br/>{{ data['knn_precision'] }}
                     </div>
                 </div>
             </div>
@@ -44,9 +51,12 @@
                             Decision Tree Chart</a>
                     </div>
                     <div class="card-body">
-                        <img src="/static/assets/img/DecisionTree_heatmap.png" alt="Decision Tree Heatmap" class="img-fluid" width="100%" />
+                        <img src="/static/assets/img/DecisionTree_heatmap.png" alt="Decision Tree Heatmap"
+                             class="img-fluid" width="100%"/>
                     </div>
-                    <div class="card-footer small text-muted"><strong>Decision Tree Accuracy:</strong><br/>{{ data['decisiontree_accuracy'] }}<br /><strong>Decision Tree Precision:</strong><br/>{{ data['decisiontree_precision'] }}</div>
+                    <div class="card-footer small text-muted"><strong>Decision Tree
+                        Accuracy:</strong><br/>{{ data['decisiontree_accuracy'] }}<br/><strong>Decision Tree
+                        Precision:</strong><br/>{{ data['decisiontree_precision'] }}</div>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -56,9 +66,12 @@
                         Random Forest Chart
                     </div>
                     <div class="card-body">
-                        <img src="/static/assets/img/RandomForest_heatmap.png" alt="Random Tree Heatmap" class="img-fluid" width="100%" />
+                        <img src="/static/assets/img/RandomForest_heatmap.png" alt="Random Tree Heatmap"
+                             class="img-fluid" width="100%"/>
                     </div>
-                    <div class="card-footer small text-muted"><strong>Random Forest Accuracy:</strong><br/>{{ data['randomforest_accuracy'] }}<br /><strong>Random Forest Precision:</strong><br/>{{ data['randomforest_precision'] }}</div>
+                    <div class="card-footer small text-muted"><strong>Random Forest
+                        Accuracy:</strong><br/>{{ data['randomforest_accuracy'] }}<br/><strong>Random Forest
+                        Precision:</strong><br/>{{ data['randomforest_precision'] }}</div>
                 </div>
             </div>
         </div>
@@ -70,10 +83,13 @@
                         Accuracy Chart
                     </div>
                     <div class="card-body">
-                        <img src="/static/assets/img/accuracy_bar.png" alt="Accuracy Bar Chart" class="img-fluid" width="100%" />
+                        <img src="/static/assets/img/accuracy_bar.png" alt="Accuracy Bar Chart" class="img-fluid"
+                             width="100%"/>
                     </div>
                     <div class="card-footer small text-muted">
-                        <strong>KNN Accuracy:</strong><br/>{{ data['knn_accuracy'] }}<br/><strong>Decision Tree Accuracy:</strong><br/>{{ data['decisiontree_accuracy'] }}<br/><strong>Random Forest Accuracy:</strong><br/>{{ data['randomforest_accuracy'] }}
+                        <strong>KNN Accuracy:</strong><br/>{{ data['knn_accuracy'] }}<br/><strong>Decision Tree
+                        Accuracy:</strong><br/>{{ data['decisiontree_accuracy'] }}<br/><strong>Random Forest
+                        Accuracy:</strong><br/>{{ data['randomforest_accuracy'] }}
                     </div>
                 </div>
             </div>
@@ -84,15 +100,18 @@
                         Precision Chart
                     </div>
                     <div class="card-body">
-                        <img src="/static/assets/img/precision_bar.png" alt="Precision Bar Chart" class="img-fluid" width="100%" />
+                        <img src="/static/assets/img/precision_bar.png" alt="Precision Bar Chart" class="img-fluid"
+                             width="100%"/>
                     </div>
-                    <div class="card-footer small text-muted"><strong>KNN Precision:</strong><br/>{{ data['knn_precision'] }}<br/><strong>Decision Tree Precision:</strong><br/>{{ data['decisiontree_precision'] }}<br/><strong>Random Forest Precision:</strong><br/>{{ data['randomforest_precision'] }}</div>
+                    <div class="card-footer small text-muted"><strong>KNN
+                        Precision:</strong><br/>{{ data['knn_precision'] }}<br/><strong>Decision Tree
+                        Precision:</strong><br/>{{ data['decisiontree_precision'] }}<br/><strong>Random Forest
+                        Precision:</strong><br/>{{ data['randomforest_precision'] }}</div>
                 </div>
             </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
             crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
 {% endblock %}
