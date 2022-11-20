@@ -194,4 +194,4 @@ def process_data():
     plt.yscale("log")
     plt.savefig('static/assets/img/accuracy_bar.png',dpi=300, bbox_inches = "tight")
 
-    return k_value, knn_accuracy, knn_precision
+    return {'k_value': k_value, 'knn_accuracy': knn_accuracy, 'knn_precision': knn_precision}

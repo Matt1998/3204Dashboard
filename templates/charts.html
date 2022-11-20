@@ -18,7 +18,7 @@
                 Determine K value
             </div>
             <div class="card-body">
-                <p>{{ k_value }}</p>
+                <p>{{ data['k_value'] }}</p>
             </div>
             <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
         </div>
@@ -28,9 +28,9 @@
                 KNN Chart
             </div>
             <div class="card-body">
-                <img src="/static/assets/img/Knn_heatmap.png"
+                <img src="/static/assets/img/Knn_heatmap.png" alt="KNN Heatmap" class="img-fluid" width="100%" />
             </div>
-            <div class="card-footer small text-muted">{{ knn_accuracy }}<br />{{ knn_precision }}</div>
+            <div class="card-footer small text-muted">{{ data['knn_accuracy'] }}<br />{{ data['knn_precision'] }}</div>
         </div>
         <div class="row">
             <div class="col-lg-6">
