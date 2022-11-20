@@ -1,5 +1,6 @@
 from flask import Flask, render_template, url_for
 from charts import process_data
+from threading import Thread
 
 app = Flask(__name__)
 
@@ -13,13 +14,7 @@ def process():
 
 @app.route('/')
 def redir():
-    return render_template('/interim.html')
-
-@app.route('/index')
-def index():
-    return render_template('/index.html')
-
-@app.route('/')
+    return render_template('/redirect.html')
 @app.route('/index')
 def index():
     return render_template('/index.html')
