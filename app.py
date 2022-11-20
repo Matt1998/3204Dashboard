@@ -5,13 +5,18 @@ app = Flask(__name__)
 
 data = None
 
-@app.before_first_request
-def before_first_request():
+@app.route('/process')
+def process():
     global data
     data = process_data()
+    return "done"
 
 
 @app.route('/')
+def redir():
+    return render_template('/interim.html')
+
+
 @app.route('/index')
 def index():
     return render_template('/index.html')
