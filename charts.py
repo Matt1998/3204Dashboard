@@ -17,11 +17,7 @@ from IPython.display import Image
 import pydotplus
 
 
-k_value = ""
-
-
 def process_data():
-    global k_value
     df = pandas.read_excel("static/assets/charts/Packetbeat_Cleaned.xlsx")
 
     # Convert IP address to long
@@ -81,7 +77,7 @@ def process_data():
     k = max(scores_mean, key=scores_mean.get)
 
     # Show most accurate k value
-    k_value += "The most accurate k value is \"" + str(k) + "\" and best value of n is \"" + str(
+    k_value = "The most accurate k value is \"" + str(k) + "\" and best value of n is \"" + str(
         bn) + "\" with accuracy of: " + str(max(score_max))
 
     # Training the model with best k
@@ -197,3 +193,5 @@ def process_data():
     plt.xlabel('\nAccuracy')
     plt.yscale("log")
     plt.savefig('static/assets/img/accuracy_bar.png',dpi=300, bbox_inches = "tight")
+
+    return k_value

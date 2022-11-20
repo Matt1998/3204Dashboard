@@ -1,12 +1,13 @@
 from flask import Flask, render_template, url_for
-from charts import process_data, k_value
+from charts import process_data
 
 app = Flask(__name__)
 
+k_value = ""
 
 @app.before_first_request
 def before_first_request():
-    process_data()
+    k_value = process_data()
 
 
 @app.route('/')
