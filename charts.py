@@ -91,7 +91,7 @@ def process_data():
 
     score_list_knn = []
     accknn = knn.score(X_Test, Y_Test)
-    print("Accuracy:", accknn)
+    knn_accuracy = "Accuracy: " + accknn
     y_pred = knn.predict(X_Test)
     y_true = Y_Test
     cmknn = confusion_matrix(y_true, y_pred)
@@ -100,7 +100,7 @@ def process_data():
     preknn = tpknn / (tpknn + fpknn)
     score_list_knn.append(accknn)
     score_list_knn.append(preknn)
-    print("Precision:", preknn)
+    knn_precision = "Precision:" + preknn
     f, ax = plt.subplots(figsize=(5, 5))
     group_names = ['True Neg', 'False Pos', 'False Neg', 'True Pos']
     group_percentages = ["{0:.4%}".format(value) for value in
@@ -194,4 +194,4 @@ def process_data():
     plt.yscale("log")
     plt.savefig('static/assets/img/accuracy_bar.png',dpi=300, bbox_inches = "tight")
 
-    return k_value
+    return k_value, knn_accuracy, knn_precision
