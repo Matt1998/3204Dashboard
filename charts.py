@@ -17,7 +17,7 @@ from IPython.display import Image
 import pydotplus
 
 
-k_value = None
+k_value = ""
 
 
 def process_data():
@@ -81,7 +81,7 @@ def process_data():
     k = max(scores_mean, key=scores_mean.get)
 
     # Show most accurate k value
-    k_value = "The most accurate k value is \"" + str(k) + "\" and best value of n is \"" + str(
+    k_value += "The most accurate k value is \"" + str(k) + "\" and best value of n is \"" + str(
         bn) + "\" with accuracy of: " + str(max(score_max))
 
     # Training the model with best k
